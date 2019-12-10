@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "54463945189",
+    "firebase_url": "https://salon-reservations-flutter.firebaseio.com",
+    "project_id": "salon-reservations-flutter",
+    "storage_bucket": "salon-reservations-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:54463945189:android:7ad2625dd25f05d149b70c",
+        "android_client_info": {
+          "package_name": "com.talmir.salon_reservations"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "54463945189-78l59ffijangog3pan5rbroll3vffjee.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.talmir.salon_reservations",
+            "certificate_hash": "fe03c437eceac63082c51535a9e2f1235b53bebd"
+          }
+        },
+        {
+          "client_id": "54463945189-ch1k0jpioqoujnmhj5cio4nogkanis26.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPLs6Dc33a9zjd2hbEm7V1-n74pFzaVKQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "54463945189-ch1k0jpioqoujnmhj5cio4nogkanis26.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
