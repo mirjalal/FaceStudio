@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:salon_reservations/services/auth.dart';
+import 'package:face_studio/services/auth.dart';
 
 class Home extends StatelessWidget {
 

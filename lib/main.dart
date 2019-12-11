@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:salon_reservations/models/user.dart';
-import 'package:salon_reservations/screens/wrapper.dart';
-import 'package:salon_reservations/services/auth.dart';
+import 'package:face_studio/models/user.dart';
+import 'package:face_studio/screens/wrapper.dart';
+import 'package:face_studio/services/auth.dart';
 
 void main() => runApp(MainApp());
 

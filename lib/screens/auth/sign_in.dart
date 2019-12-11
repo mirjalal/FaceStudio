@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:salon_reservations/services/auth.dart';
+import 'package:face_studio/services/auth.dart';
+import 'package:face_studio/shared/loading_widget.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -14,10 +15,38 @@ class _SignInState extends State<SignIn> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  
+  bool _loading = false;
+  bool _isButtonDisabled = false;
+
+  void _setButtonClickEvent() {
+    // setState(() {
+      _isButtonDisabled = true;
+    // });
+  }
+
+  Widget _buildSignInButton(String buttonText) {
+    return new RaisedButton(
+      child: new Text(
+        _isButtonDisabled ? 'Hold on...' : 'buttonText'
+      ),
+      onPressed: _counterButtonPress(),
+    );
+  }
+
+  Function _counterButtonPress() {
+    if (_isButtonDisabled) {
+      return null;
+    } else {
+      return () {
+        // do anything else you may want to here
+        _setButtonClickEvent();
+      };
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return _loading ? Loading() : Scaffold(
       appBar: AppBar(
         elevation: 0.0,
         title: Text('Sign in to FaceStudio'),
@@ -27,15 +56,21 @@ class _SignInState extends State<SignIn> {
         child: Column(
           children: <Widget>[
             RaisedButton(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(5.0))
+              ),
               child: Text('Google Sign in'),
               onPressed: () async {
+                setState(() => _loading = true);
                 dynamic result = await _authService.googleSignIn();
                 if (result == null)
                   print('error signing in');
                 else
                   print(result.uid);
+                setState(() => _loading = false);
               },
             ),
+            // _buildSignInButton('Google Sign in'),
             Form(
               key: _formKey,
               child: Column(
@@ -85,9 +120,11 @@ class _SignInState extends State<SignIn> {
                       style: TextStyle(color: Colors.white)
                     ), 
                     onPressed: () async {
-                      if (_formKey.currentState.validate()){
+                      if (_formKey.currentState.validate()) {
+                        setState(() => _loading = true);
                         dynamic create = await _authService.emailPasswordSignIn(_emailController.text, _passwordController.text);
                         print(create);
+                        setState(() => _loading = false);
                       }
                     },
                   ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:salon_reservations/screens/auth/sign_in.dart';
+import 'package:face_studio/screens/auth/sign_in.dart';
 
 class Authenticate extends StatefulWidget {
     @override

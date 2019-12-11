@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:salon_reservations/models/user.dart';
+import 'package:face_studio/models/user.dart';
 
 class AuthService {
 
@@ -53,13 +53,13 @@ class AuthService {
       final FirebaseUser currentUser = await _auth.currentUser();
       return existingUser.uid == currentUser.uid ? _userFromFirebaseUser(currentUser) : _userFromFirebaseUser(existingUser);
     } catch(e) {
-      if ((e as PlatformException).code == 'ERROR_USER_NOT_FOUND') {
-        final FirebaseUser newUser = (await _auth.createUserWithEmailAndPassword(
-          email: email,
-          password: password
-        )).user;
-        return _userFromFirebaseUser(newUser);
-      } else
+      // if ((e as PlatformException).code == 'ERROR_USER_NOT_FOUND') {
+      //   final FirebaseUser newUser = (await _auth.createUserWithEmailAndPassword(
+      //     email: email,
+      //     password: password
+      //   )).user;
+      //   return _userFromFirebaseUser(newUser);
+      // } else
         return null;
     }
   }
