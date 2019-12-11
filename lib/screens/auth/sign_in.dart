@@ -16,33 +16,33 @@ class _SignInState extends State<SignIn> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool _loading = false;
-  bool _isButtonDisabled = false;
+  // bool _isButtonDisabled = false;
 
-  void _setButtonClickEvent() {
-    // setState(() {
-      _isButtonDisabled = true;
-    // });
-  }
+  // void _setButtonClickEvent() {
+  //   // setState(() {
+  //     _isButtonDisabled = true;
+  //   // });
+  // }
 
-  Widget _buildSignInButton(String buttonText) {
-    return new RaisedButton(
-      child: new Text(
-        _isButtonDisabled ? 'Hold on...' : 'buttonText'
-      ),
-      onPressed: _counterButtonPress(),
-    );
-  }
+  // Widget _buildSignInButton(String buttonText) {
+  //   return new RaisedButton(
+  //     child: new Text(
+  //       _isButtonDisabled ? 'Hold on...' : 'buttonText'
+  //     ),
+  //     onPressed: _counterButtonPress(),
+  //   );
+  // }
 
-  Function _counterButtonPress() {
-    if (_isButtonDisabled) {
-      return null;
-    } else {
-      return () {
-        // do anything else you may want to here
-        _setButtonClickEvent();
-      };
-    }
-  }
+  // Function _counterButtonPress() {
+  //   if (_isButtonDisabled) {
+  //     return null;
+  //   } else {
+  //     return () {
+  //       // do anything else you may want to here
+  //       _setButtonClickEvent();
+  //     };
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {

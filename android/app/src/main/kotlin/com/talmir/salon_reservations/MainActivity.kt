@@ -1,4 +1,4 @@
-package com.talmir.salon_reservations
+package com.talmir.facestudio
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

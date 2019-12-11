@@ -1,42 +1,42 @@
 {
   "project_info": {
-    "project_number": "54463945189",
-    "firebase_url": "https://salon-reservations-flutter.firebaseio.com",
-    "project_id": "salon-reservations-flutter",
-    "storage_bucket": "salon-reservations-flutter.appspot.com"
+    "project_number": "897011393858",
+    "firebase_url": "https://facestudio-mobile.firebaseio.com",
+    "project_id": "facestudio-mobile",
+    "storage_bucket": "facestudio-mobile.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:54463945189:android:7ad2625dd25f05d149b70c",
+        "mobilesdk_app_id": "1:897011393858:android:80435a616ffee1e063d4db",
         "android_client_info": {
-          "package_name": "com.talmir.salon_reservations"
+          "package_name": "com.talmir.facestudio"
         }
       },
       "oauth_client": [
         {
-          "client_id": "54463945189-78l59ffijangog3pan5rbroll3vffjee.apps.googleusercontent.com",
+          "client_id": "897011393858-k8a2oosiedkvtdrdt4b2b01deh8bfv94.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.talmir.salon_reservations",
+            "package_name": "com.talmir.facestudio",
             "certificate_hash": "fe03c437eceac63082c51535a9e2f1235b53bebd"
           }
         },
         {
-          "client_id": "54463945189-ch1k0jpioqoujnmhj5cio4nogkanis26.apps.googleusercontent.com",
+          "client_id": "897011393858-2b7eefviu1pnkhe1kg0ce6292d7vr04m.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDPLs6Dc33a9zjd2hbEm7V1-n74pFzaVKQ"
+          "current_key": "AIzaSyB5LFfe3eeATdcPtx22KWXzYAUCwHSjxHE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "54463945189-ch1k0jpioqoujnmhj5cio4nogkanis26.apps.googleusercontent.com",
+              "client_id": "897011393858-2b7eefviu1pnkhe1kg0ce6292d7vr04m.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

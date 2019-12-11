@@ -1,6 +1,6 @@
-# salon_reservations
+# FaceStudio
 
-Salon Reservations (Flutter)
+FaceStudio (Flutter)
 
 ## Getting Started
 
