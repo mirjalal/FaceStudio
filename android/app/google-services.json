@@ -38,6 +38,13 @@
             {
               "client_id": "897011393858-2b7eefviu1pnkhe1kg0ce6292d7vr04m.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "897011393858-i8f9oldmiig2epj41hva20ifvjbftqb2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.talmir.facestudio"
+              }
             }
           ]
         }
