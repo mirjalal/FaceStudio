@@ -84,7 +84,6 @@ class _SignInState extends State<SignIn> {
                     ),
                     style: TextStyle(fontSize: 16.0),
                     keyboardType: TextInputType.emailAddress,
-                    textInputAction: TextInputAction.next,
                     validator: (String email) {
                       bool isValid = RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(email);
                       if (email.isEmpty || !isValid)
@@ -100,7 +99,6 @@ class _SignInState extends State<SignIn> {
                       labelText: 'Password',
                       border: OutlineInputBorder(),
                     ),
-                    textInputAction: TextInputAction.done,
                     obscureText: true,
                     validator: (String password) {
                       if (password.length < 6)

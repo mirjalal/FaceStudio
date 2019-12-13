@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -15,6 +16,9 @@ class MainApp extends StatelessWidget {
         child: MaterialApp(
           debugShowCheckedModeBanner: !kReleaseMode, // removes "Debug" banner if in Release mode (https://stackoverflow.com/a/55612795/4057688)
           theme: ThemeData(
+            cupertinoOverrideTheme: CupertinoThemeData(
+              primaryColor: Colors.black,
+            ),
             cursorColor: Colors.black,
             primaryColor: Colors.black,
             accentColor: Colors.red[900],
