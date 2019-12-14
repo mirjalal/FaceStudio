@@ -23,6 +23,11 @@ class MainApp extends StatelessWidget {
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
+          supportedLocales: [
+            const Locale('az'),
+            const Locale('en'),
+            const Locale('ru'),
+          ],
           theme: ThemeData(
             cupertinoOverrideTheme: CupertinoThemeData(
               primaryColor: Colors.black,
