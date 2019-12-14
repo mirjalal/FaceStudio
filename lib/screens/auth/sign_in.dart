@@ -1,3 +1,4 @@
+import 'package:face_studio/generated/i18n.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:face_studio/services/auth.dart';
@@ -46,10 +47,12 @@ class _SignInState extends State<SignIn> {
 
   @override
   Widget build(BuildContext context) {
+    final _translations = I18n.of(context);
+
     return _loading ? Loading() : Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        title: Text('Sign in to FaceStudio'),
+        title: Text(_translations.signInPageTitle),
       ),
       body: Container(
         padding: EdgeInsets.only(left: 16.0, right: 16.0),
@@ -59,15 +62,12 @@ class _SignInState extends State<SignIn> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(5.0))
               ),
-              child: Text('Google Sign in'),
+              child: Text(_translations.googleSignIn),
               onPressed: () async {
                 setState(() => _loading = true);
-                dynamic result = await _authService.googleSignIn();
-                if (result == null)
-                  print('error signing in');
-                else
-                  print(result.uid);
-                setState(() => _loading = false);
+                await _authService.googleSignIn();
+                if (mounted)
+                  setState(() => _loading = false);
               },
             ),
             // _buildSignInButton('Google Sign in'),
@@ -78,8 +78,8 @@ class _SignInState extends State<SignIn> {
                   SizedBox(height: 20.0),
                   TextFormField(
                     controller: _emailController,
-                    decoration: const InputDecoration(
-                      labelText: 'Email',
+                    decoration: InputDecoration(
+                      labelText: _translations.email,
                       border: OutlineInputBorder(),
                     ),
                     style: TextStyle(fontSize: 16.0),
@@ -87,7 +87,7 @@ class _SignInState extends State<SignIn> {
                     validator: (String email) {
                       bool isValid = RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(email);
                       if (email.isEmpty || !isValid)
-                        return 'Please enter email';
+                        return _translations.enterValidEmail;
                       return null;
                     },
                   ),
@@ -95,14 +95,14 @@ class _SignInState extends State<SignIn> {
                   SizedBox(height: 20.0),
                   TextFormField(
                     controller: _passwordController,
-                    decoration: const InputDecoration(
-                      labelText: 'Password',
+                    decoration: InputDecoration(
+                      labelText: _translations.password,
                       border: OutlineInputBorder(),
                     ),
                     obscureText: true,
                     validator: (String password) {
-                      if (password.length < 6)
-                        return 'Please enter a password 6+ chars long';
+                      if (password.length < 8)
+                        return _translations.passwordLengthError;
                       return null;
                     },
                   ),
@@ -114,15 +114,15 @@ class _SignInState extends State<SignIn> {
                     ),
                     color: Theme.of(context).accentColor,
                     child: Text(
-                      'Sign in',
+                      _translations.signIn,
                       style: TextStyle(color: Colors.white)
                     ), 
                     onPressed: () async {
                       if (_formKey.currentState.validate()) {
                         setState(() => _loading = true);
-                        dynamic create = await _authService.emailPasswordSignIn(_emailController.text, _passwordController.text);
-                        print(create);
-                        setState(() => _loading = false);
+                        await _authService.emailPasswordSignIn(_emailController.text, _passwordController.text);
+                        if (mounted)
+                          setState(() => _loading = false);
                       }
                     },
                   ),

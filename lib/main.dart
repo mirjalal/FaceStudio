@@ -1,6 +1,8 @@
+import 'package:face_studio/generated/i18n.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:face_studio/models/user.dart';
 import 'package:face_studio/screens/wrapper.dart';
@@ -15,6 +17,12 @@ class MainApp extends StatelessWidget {
         value: AuthService().user,
         child: MaterialApp(
           debugShowCheckedModeBanner: !kReleaseMode, // removes "Debug" banner if in Release mode (https://stackoverflow.com/a/55612795/4057688)
+          localizationsDelegates: [
+            I18n.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
           theme: ThemeData(
             cupertinoOverrideTheme: CupertinoThemeData(
               primaryColor: Colors.black,

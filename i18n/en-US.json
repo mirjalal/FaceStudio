@@ -1,0 +1,11 @@
+{
+    "signInPageTitle": "Sign in to FaceStudio",
+    "email": "Email",
+    "enterValidEmail": "Please enter valid email",
+    "password": "Password",
+    "passwordLengthError": "Please enter 8 symbols at least",
+    "signIn": "Sign in",
+    "googleSignIn": "Use your Google Account",
+    "welcome": "Welcome, {username}",
+    "logout": "Logout"
+}

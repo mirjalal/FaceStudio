@@ -16,12 +16,12 @@ class AuthService {
                   photoUrl: firebaseUser.photoUrl) : null;
 	}
 
- // auth change user stream
- Stream<User> get user {
-   return _auth.onAuthStateChanged
-     //.map((FirebaseUser fUser) => _userFromFirebaseUser(fUser));
-     .map(_userFromFirebaseUser);
- }
+  // auth change user stream
+  Stream<User> get user {
+    return _auth.onAuthStateChanged
+      //.map((FirebaseUser fUser) => _userFromFirebaseUser(fUser));
+      .map(_userFromFirebaseUser);
+  }
 
   // sign in google
   Future googleSignIn() async {
@@ -38,7 +38,6 @@ class AuthService {
       final FirebaseUser currentUser = await _auth.currentUser();
       return user.uid == currentUser.uid ? _userFromFirebaseUser(currentUser) : _userFromFirebaseUser(user);
     } catch (e) {
-      print(e);
       return null;
     }
   }

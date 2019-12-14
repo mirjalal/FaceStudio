@@ -1,0 +1,11 @@
+{
+    "signInPageTitle": "FaceStudio-ya daxil olun",
+    "email": "E-poçt",
+    "enterValidEmail": "Düzgün e-poçt daxil edin",
+    "password": "Şifrə",
+    "passwordLengthError": "Ən az 8 simvol daxil edin",
+    "signIn": "Daxil ol",
+    "googleSignIn": "Google Hesabınızı istifadə edin",
+    "welcome": "Xoş gəldiniz, {username}",
+    "logout": "Çıxış"
+}

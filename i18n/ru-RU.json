@@ -1,0 +1,11 @@
+{
+    "signInPageTitle": "Войдите в FaceStudio",
+    "email": "Эл. адрес",
+    "enterValidEmail": "Неверный адрес электронной почты",
+    "passwordLengthError": "Используйте не менее 8 символов",
+    "password": "Пароль",
+    "signIn": "Войти",
+    "googleSignIn": "Используйте аккаунт Google",
+    "welcome": "Здравствуйте, {username}",
+    "logout": "Выйти"
+}
