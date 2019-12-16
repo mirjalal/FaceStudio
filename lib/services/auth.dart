@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:face_studio/models/user.dart';
 
@@ -13,7 +12,9 @@ class AuthService {
               User(uid: firebaseUser.uid, 
                   email: firebaseUser.email, 
                   fullName: firebaseUser.displayName, 
-                  photoUrl: firebaseUser.photoUrl) : null;
+                  photoUrl: firebaseUser.photoUrl,
+                  isEmailVerified: firebaseUser.isEmailVerified,
+                  sendEmailVerification: firebaseUser.sendEmailVerification) : null;
 	}
 
   // auth change user stream
@@ -52,14 +53,21 @@ class AuthService {
       final FirebaseUser currentUser = await _auth.currentUser();
       return existingUser.uid == currentUser.uid ? _userFromFirebaseUser(currentUser) : _userFromFirebaseUser(existingUser);
     } catch(e) {
-      if ((e as PlatformException).code == 'ERROR_USER_NOT_FOUND') {
-        final FirebaseUser newUser = (await _auth.createUserWithEmailAndPassword(
+      print(e);
+      return null;
+    }
+  }
+
+  Future registerUser(String email, String password) async {
+    try {
+      final FirebaseUser newUser = (await _auth.createUserWithEmailAndPassword(
           email: email,
           password: password
         )).user;
-        return _userFromFirebaseUser(newUser);
-      } else
-        return null;
+      return _userFromFirebaseUser(newUser);
+    } catch(e) {
+      print(e);
+      return null;
     }
   }
 

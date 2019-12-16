@@ -34,6 +34,8 @@ class I18n implements WidgetsLocalizations {
 
   /// "Sign in to FaceStudio"
   String get signInPageTitle => "Sign in to FaceStudio";
+  /// "Use your Google Account"
+  String get googleSignIn => "Use your Google Account";
   /// "Email"
   String get email => "Email";
   /// "Please enter valid email"
@@ -44,10 +46,30 @@ class I18n implements WidgetsLocalizations {
   String get passwordLengthError => "Please enter 8 symbols at least";
   /// "Sign in"
   String get signIn => "Sign in";
-  /// "Use your Google Account"
-  String get googleSignIn => "Use your Google Account";
-  /// "Welcome, ${username}"
-  String welcome(String username) => "Welcome, ${username}";
+  /// "Register"
+  String get gotoRegistrationPage => "Register";
+  /// "Create an account"
+  String get registrationPageTitle => "Create an account";
+  /// "Name"
+  String get name => "Name";
+  /// "Surname"
+  String get surname => "Surname";
+  /// "Birthdate"
+  String get birthdate => "Birthdate";
+  /// "Choose profile image"
+  String get pickImage => "Choose profile image";
+  /// "Confirm"
+  String get confirmPassword => "Confirm";
+  /// "Those passwords didn't match. Try again."
+  String get passwordsNotMatch => "Those passwords didn't match. Try again.";
+  /// "Register"
+  String get register => "Register";
+  /// "Almost done..."
+  String get almostDone => "Almost done...";
+  /// "We've sent an email to ${email}. Open it up to activate your account."
+  String verifyEmail(String email) => "We've sent an email to ${email}. Open it up to activate your account.";
+  /// "Welcome ${username}"
+  String welcome(String username) => "Welcome ${username}";
   /// "Logout"
   String get logout => "Logout";
 }
@@ -65,6 +87,9 @@ class _I18n_az_AZ extends I18n {
   /// "FaceStudio-ya daxil olun"
   @override
   String get signInPageTitle => "FaceStudio-ya daxil olun";
+  /// "Google Hesabınızı istifadə edin"
+  @override
+  String get googleSignIn => "Google Hesabınızı istifadə edin";
   /// "E-poçt"
   @override
   String get email => "E-poçt";
@@ -80,12 +105,42 @@ class _I18n_az_AZ extends I18n {
   /// "Daxil ol"
   @override
   String get signIn => "Daxil ol";
-  /// "Google Hesabınızı istifadə edin"
+  /// "Qeydiyyat"
   @override
-  String get googleSignIn => "Google Hesabınızı istifadə edin";
-  /// "Xoş gəldiniz, ${username}"
+  String get gotoRegistrationPage => "Qeydiyyat";
+  /// "Hesab yarat"
   @override
-  String welcome(String username) => "Xoş gəldiniz, ${username}";
+  String get registrationPageTitle => "Hesab yarat";
+  /// "Ad"
+  @override
+  String get name => "Ad";
+  /// "Soyad"
+  @override
+  String get surname => "Soyad";
+  /// "Doğum tarixi"
+  @override
+  String get birthdate => "Doğum tarixi";
+  /// "Profil şəklini seçin"
+  @override
+  String get pickImage => "Profil şəklini seçin";
+  /// "Təsdiq edin"
+  @override
+  String get confirmPassword => "Təsdiq edin";
+  /// "Bu parollar üst-üstə düşmədi. Yenidən cəhd edin."
+  @override
+  String get passwordsNotMatch => "Bu parollar üst-üstə düşmədi. Yenidən cəhd edin.";
+  /// "Qeydiyyatdan keç"
+  @override
+  String get register => "Qeydiyyatdan keç";
+  /// "Demək olar ki hazırdır..."
+  @override
+  String get almostDone => "Demək olar ki hazırdır...";
+  /// "Təsdiqləmə məktubu ${email} ünvanına göndərildi. Hesabınızı aktivləşdirmək üçün keçidə daxil olun."
+  @override
+  String verifyEmail(String email) => "Təsdiqləmə məktubu ${email} ünvanına göndərildi. Hesabınızı aktivləşdirmək üçün keçidə daxil olun.";
+  /// "Xoş gəldiniz ${username}"
+  @override
+  String welcome(String username) => "Xoş gəldiniz ${username}";
   /// "Çıxış"
   @override
   String get logout => "Çıxış";
@@ -100,6 +155,9 @@ class _I18n_ru_RU extends I18n {
   /// "Войдите в FaceStudio"
   @override
   String get signInPageTitle => "Войдите в FaceStudio";
+  /// "Используйте аккаунт Google"
+  @override
+  String get googleSignIn => "Используйте аккаунт Google";
   /// "Эл. адрес"
   @override
   String get email => "Эл. адрес";
@@ -115,12 +173,42 @@ class _I18n_ru_RU extends I18n {
   /// "Войти"
   @override
   String get signIn => "Войти";
-  /// "Используйте аккаунт Google"
+  /// "Регистрация"
   @override
-  String get googleSignIn => "Используйте аккаунт Google";
-  /// "Здравствуйте, ${username}"
+  String get gotoRegistrationPage => "Регистрация";
+  /// "Создать аккаунт"
   @override
-  String welcome(String username) => "Здравствуйте, ${username}";
+  String get registrationPageTitle => "Создать аккаунт";
+  /// "Имя"
+  @override
+  String get name => "Имя";
+  /// "Фамилия"
+  @override
+  String get surname => "Фамилия";
+  /// "Дата рождения"
+  @override
+  String get birthdate => "Дата рождения";
+  /// "Выберите изображение профиля"
+  @override
+  String get pickImage => "Выберите изображение профиля";
+  /// "Подтвердить"
+  @override
+  String get confirmPassword => "Подтвердить";
+  /// "Пароли не совпадают. Повторите попытку."
+  @override
+  String get passwordsNotMatch => "Пароли не совпадают. Повторите попытку.";
+  /// "Завершить регистрацию"
+  @override
+  String get register => "Завершить регистрацию";
+  /// "Почти сделано..."
+  @override
+  String get almostDone => "Почти сделано...";
+  /// "На адрес ${email} отправлено письмо. Проверьте почту для активации учетной записи."
+  @override
+  String verifyEmail(String email) => "На адрес ${email} отправлено письмо. Проверьте почту для активации учетной записи.";
+  /// "Здравствуйте ${username}"
+  @override
+  String welcome(String username) => "Здравствуйте ${username}";
   /// "Выйти"
   @override
   String get logout => "Выйти";

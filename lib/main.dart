@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:face_studio/models/user.dart';
 import 'package:face_studio/screens/wrapper.dart';
@@ -35,6 +36,9 @@ class MainApp extends StatelessWidget {
             cursorColor: Colors.black,
             primaryColor: Colors.black,
             accentColor: Colors.red[900],
+            textTheme: GoogleFonts.redHatDisplayTextTheme(
+              Theme.of(context).textTheme,
+            ),
           ),
           home: Wrapper(),
         ),

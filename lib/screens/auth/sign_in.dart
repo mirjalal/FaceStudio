@@ -1,10 +1,14 @@
 import 'package:face_studio/generated/i18n.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:face_studio/shared/contants.dart';
 import 'package:flutter/material.dart';
 import 'package:face_studio/services/auth.dart';
 import 'package:face_studio/shared/loading_widget.dart';
 
 class SignIn extends StatefulWidget {
+
+  final Function toggleView;
+  SignIn({ this.toggleView });
+
   @override
   _SignInState createState() => _SignInState();
 }
@@ -17,33 +21,6 @@ class _SignInState extends State<SignIn> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool _loading = false;
-  // bool _isButtonDisabled = false;
-
-  // void _setButtonClickEvent() {
-  //   // setState(() {
-  //     _isButtonDisabled = true;
-  //   // });
-  // }
-
-  // Widget _buildSignInButton(String buttonText) {
-  //   return new RaisedButton(
-  //     child: new Text(
-  //       _isButtonDisabled ? 'Hold on...' : 'buttonText'
-  //     ),
-  //     onPressed: _counterButtonPress(),
-  //   );
-  // }
-
-  // Function _counterButtonPress() {
-  //   if (_isButtonDisabled) {
-  //     return null;
-  //   } else {
-  //     return () {
-  //       // do anything else you may want to here
-  //       _setButtonClickEvent();
-  //     };
-  //   }
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +29,15 @@ class _SignInState extends State<SignIn> {
     return _loading ? Loading() : Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        title: Text(_translations.signInPageTitle),
+        title: appBarWithCustomStyle(_translations.signInPageTitle),
+        actions: <Widget>[
+          FlatButton(
+            child: Text(_translations.gotoRegistrationPage, style: TextStyle(color: Colors.white)),
+            onPressed: () {
+              widget.toggleView();
+            },
+          )
+        ],
       ),
       body: Container(
         padding: EdgeInsets.only(left: 16.0, right: 16.0),
@@ -70,7 +55,6 @@ class _SignInState extends State<SignIn> {
                   setState(() => _loading = false);
               },
             ),
-            // _buildSignInButton('Google Sign in'),
             Form(
               key: _formKey,
               child: Column(
@@ -121,6 +105,7 @@ class _SignInState extends State<SignIn> {
                       if (_formKey.currentState.validate()) {
                         setState(() => _loading = true);
                         await _authService.emailPasswordSignIn(_emailController.text, _passwordController.text);
+                        // todo(check if email is verified)
                         if (mounted)
                           setState(() => _loading = false);
                       }
