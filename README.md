@@ -1,3 +1,5 @@
+[![Codemagic build status](https://api.codemagic.io/apps/5e748401767d6212022d0757/5e748401767d6212022d0756/status_badge.svg)](https://codemagic.io/apps/5e748401767d6212022d0757/5e748401767d6212022d0756/latest_build)
+
 # FaceStudio
 
 FaceStudio (Flutter)
